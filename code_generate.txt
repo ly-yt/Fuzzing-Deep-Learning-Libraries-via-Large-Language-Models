@@ -1,22 +1,4 @@
 
-
-def f(input, filters, strides, padding, data_format='NHWC', dilations=None, name=None):
-
-# 1. Import TensorFlow
-
-import tensorflow as tf
-
-# 2. Generate input data
-
-input = tf.placeholder(tf.float32, [1, 1], name='input')
-
-filters = tf.nn.conv2d(input, filters, strides, padding, data_format)
-
-# 3. Call the API
-
-tf.run(filters, feed_dict={input: input})
-
-
 def f():
     import tensorflow as tf
     input_data = tf.random.normal([1, 2, 2, 1])
