@@ -11,10 +11,10 @@
 3. 输入提示词，获得上述各个api接口应用codex模型自动生成的的代码种子库  
 以下选取tf.nn作为目标api接口进行实例展示：  
 输入提示：  
-  0)create a function named f to do the following steps   
-  1)Import TensorFlow 2.10.0  
-  2)Generate input data    
-  3)Call the API tf.nn.conv2d(input,filters,strides, padding,data_format='NHWC',dilations=None,name=None)  
+    0)create a function named f to do the following steps   
+    1)Import TensorFlow 2.10.0  
+    2)Generate input data    
+    3)Call the API tf.nn.conv2d(input,filters,strides, padding,data_format='NHWC',dilations=None,name=None)  
 代码生成：  
       ```python   
       def f():  
@@ -72,7 +72,7 @@
 10. 根据生成的样本代码正确和错误个数更新变异算子的后验概率
 11. 对生成的样本代码打分
 12. 将得分高的正确样本代码加入到种子库中
-13. 继续
+13. 重复上述循环
 14. 到达预算时间退出时间循环
 15. 获得该目标api最终代码突变后生成的测试代码库
 ---
