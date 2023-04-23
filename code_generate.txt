@@ -1,0 +1,41 @@
+
+
+def f(input, filters, strides, padding, data_format='NHWC', dilations=None, name=None):
+
+# 1. Import TensorFlow
+
+import tensorflow as tf
+
+# 2. Generate input data
+
+input = tf.placeholder(tf.float32, [1, 1], name='input')
+
+filters = tf.nn.conv2d(input, filters, strides, padding, data_format)
+
+# 3. Call the API
+
+tf.run(filters, feed_dict={input: input})
+
+
+def f():
+    import tensorflow as tf
+    input_data = tf.random.normal([1, 2, 2, 1])
+    filters = tf.random.normal([2, 2, 1, 1])
+    strides = [1, 1, 1, 1]
+    padding = 'SAME'
+    output = tf.nn.conv2d(input_data, filters, strides, padding, data_format='NHWC', dilations=None, name=None)
+    return output
+
+#用chatgpt生成的代码
+def f():
+    # Generate input data
+    input_data = tf.random.normal([1, 10, 10, 3])
+    # Define filters
+    filters = tf.Variable(tf.random.normal([3, 3, 3, 16]))
+    # Define strides
+    strides = [1, 1, 1, 1]
+    # Define padding
+    padding = 'SAME'
+    # Call tf.nn.conv2d API
+    output = tf.nn.conv2d(input_data, filters, strides, padding)
+    return output
