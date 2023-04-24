@@ -80,6 +80,7 @@
     该论文中所用的codex模型是由openai研发的大型语言模型，目前官网上已将其弃用😭
     选择可以实现和codex同样功能的text-davinci-003模型进行替代
     因此codex.py代码实现所用模型是替代后的text-davinci-003模型
+    code_generate.txt是利用替代后的text-davinci-003模型根据提示自动生成的关于目标api的测试代码
     全文最终实现复现的代码文件是fuzzing.py
 
 
