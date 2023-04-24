@@ -5,8 +5,8 @@ from typing import List
 import torch
 import tokenizers
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from llm.codex import generate_seeds
-from llm.example_batched_incoder_usage import InfillingModel
+from codex import generate_seeds
+from example_batched_incoder_usage import InfillingModel
 
     
 #掩盖填充的简陋版（不判断各个突变算子掩盖后生成的填充代码的正确性，直接对目标api应用每个突变算子进行代码突变）
