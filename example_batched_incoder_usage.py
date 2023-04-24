@@ -278,33 +278,33 @@ class InfillingModel:
         assert len(outputs) == 1
         return outputs[0]
 
-infilling_model = InfillingModel("facebook/incoder-1B", cuda=True, half=False)
+# infilling_model = InfillingModel("facebook/incoder-1B", cuda=True, half=False)
 
-all_examples =  [
-'''\
-def count_words(filename):
-    """ <insert> """
-    counts = Counter()
-    with open(filename) as file:
-        for line in file:
-            words = line.split(' ')
-            counts.update(words)
-    return counts\
-''',
-'''\
-def count_lines(filename):
-    """ <insert> """
-    counts = Counter()
-    with open(filename) as file:
-        return(len(list(file)))\
-'''
-]
+# all_examples =  [
+# '''\
+# def count_words(filename):
+#     """ <insert> """
+#     counts = Counter()
+#     with open(filename) as file:
+#         for line in file:
+#             words = line.split(' ')
+#             counts.update(words)
+#     return counts\
+# ''',
+# '''\
+# def count_lines(filename):
+#     """ <insert> """
+#     counts = Counter()
+#     with open(filename) as file:
+#         return(len(list(file)))\
+# '''
+# ]
 
-all_parts = [example.split("<insert>") for example in all_examples]
+# all_parts = [example.split("<insert>") for example in all_examples]
 
-all_results = infilling_model.batched_infill(all_parts, max_to_generate=128, temperature=0.2)
+# all_results = infilling_model.batched_infill(all_parts, max_to_generate=128, temperature=0.2)
 
-for result in all_results:
-  print("completed document:")
-  print(result["text"])
-  print()
+# for result in all_results:
+#   print("completed document:")
+#   print(result["text"])
+#   print()
