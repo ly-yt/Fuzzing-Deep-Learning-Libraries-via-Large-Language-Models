@@ -81,6 +81,7 @@
     选择可以实现和codex同样功能的text-davinci-003模型进行替代
     因此codex.py代码实现所用模型是替代后的text-davinci-003模型
     code_generate.txt是利用替代后的text-davinci-003模型根据提示自动生成的关于目标api的测试代码
+    论文中使用的codex模型有两种，分别是6.7B parameter model: facebook/incoder-6B和1.3B parameter model: facebook/incoder-1B，效果最好的是前一种但由于模型太大普通电脑带不动😭，故此处复现我使用的是相对小参数含量的facebook/incoder-1B模型，生成的代码准确率会下降⬇️。
     全文最终实现复现的代码文件是fuzzing.py
 
 
