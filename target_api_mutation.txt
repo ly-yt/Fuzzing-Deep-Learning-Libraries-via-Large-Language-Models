@@ -1,0 +1,33 @@
+测试目标api——random.normal
+结果：
+import tensorflow as tf
+input_data = tf.random.normal([1, 2, 2, 1])
+filters = [3, 3, 3, 3]
+strides = [1, 1, 1, 1]
+padding = 'SAME'
+output = tf.nn.conv2d(input_data, filters, strides, padding, data_format='NHWC',dilations=None, name=None)
+return output
+
+import tensorflow as tf
+input_data = tf.random.normal([1, 2, 2, 1])
+filters = tf.random.normal([2, 2, 1, 1])
+strides = [1, 1, 1, 1]
+padding = 'SAME'
+output = tf.nn.conv2d(input_data, filters, strides, padding, data_format='NHWC',dilations=None, name=None)
+return output
+
+import tensorflow as tf
+input_data = tf.random.normal([1, 2, 2, 1])
+filters = [1, 1, 1, 1]
+strides = [1, 1, 1, 1]
+padding = 'SAME'
+output = tf.nn.conv2d(input_data, filters, strides, padding, data_format='NHWC',dilations=None, name=None)
+return output
+
+import tensorflow as tf
+input_data = tf.random.normal([1, 2, 2, 1])
+filters = [1, 1, 1, 1]
+strides = [1, 1, 1, 1]
+padding = 'SAME'
+output = tf.nn.conv2d_transpose(input_data, filters, strides, padding, data_format='NHWC',dilations=None, name=None)
+return output
